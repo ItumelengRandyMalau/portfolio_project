@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login/Signup</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/login.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>Login/Signup</h2>
+        <div class="tabs">
+            <button class="tab-link active" onclick="openForm('login')">Login</button>
+            <button class="tab-link" onclick="openForm('signup')">Signup</button>
+        </div>
+        <div id="login" class="form-container active">
+            <form action="{{ url_for('login') }}" method="post">
+                <label for="login-username">Username:</label>
+                <input type="text" id="login-username" name="username" required>
+                <label for="login-password">Password:</label>
+                <input type="password" id="login-password" name="password" required>
+                <button type="submit">Login</button>
+            </form>
+        </div>
+        <div id="signup" class="form-container">
+            <form action="{{ url_for('signup') }}" method="post">
+                <label for="signup-username">Username:</label>
+                <input type="text" id="signup-username" name="username" required>
+                <label for="signup-email">Email:</label>
+                <input type="email" id="signup-email" name="email" required>
+                <label for="signup-password">Password:</label>
+                <input type="password" id="signup-password" name="password" required>
+                <button type="submit">Signup</button>
+            </form>
+        </div>
+    </div>
+    <script>
+        function openForm(formName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("form-container");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].classList.remove("active");
+            }
+            tablinks = document.getElementsByClassName("tab-link");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].classList.remove("active");
+            }
+            document.getElementById(formName).classList.add("active");
+            document.querySelector(`[onclick="openForm('${formName}')"]`).classList.add("active");
+        }
+    </script>
+</body>
+</html>
+
