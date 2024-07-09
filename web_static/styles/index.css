@@ -1,0 +1,187 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    padding: 10px 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.logo span {
+    color: #e74c3c;
+}
+
+nav a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: #333;
+}
+
+nav .logout {
+    padding: 5px 10px;
+    border: none;
+    background-color: #e74c3c;
+    color: #fff;
+    cursor: pointer;
+}
+
+.main {
+    padding: 20px;
+}
+
+.car-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    justify-content: center;
+}
+
+.car-card {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.car-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.car-card .card-content {
+    flex-grow: 1;
+}
+
+.car-card button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background-color: #333;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 4px;
+    margin-top: 10px;
+}
+
+.car-card button:hover {
+    background-color: #e74c3c;
+}
+
+section {
+    display: none;
+    min-height: 100vh;
+}
+
+section:target {
+    display: block;
+}
+
+.home-section {
+    display: block;
+    background-image: url('https://o.aolcdn.com/images/dims3/GLOB/legacy_thumbnail/1062x597/format/jpg/quality/100/https://s.aolcdn.com/os/ab/_cms/2021/11/19163652/cobb_TFW-281021-6253.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    color: white;
+    text-align: center;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input, .form-group textarea {
+    width: calc(100% - 1px);
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.form-group textarea {
+    resize: vertical;
+    height: 120px;
+}
+
+.form-group button {
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.form-group button:hover {
+    background-color: #e74c3c;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+

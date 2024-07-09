@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Rent</title>
+    <link rel="stylesheet" href="styles/index.css">
+</head>
+<body>
+    <header>
+        <div class="logo">RENTMY<span>RIDE</span></div>
+        <form action="/search" method="get" class="search-form">
+            <input type="text" name="model" placeholder="Model">
+            <input type="text" name="brand" placeholder="Brand">
+            <input type="text" name="location" placeholder="Location">
+            <input type="number" name="kilometers" placeholder="Max Kilometers">
+            <button type="submit">Search</button>
+        </form>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#rent-now">Rent Now</a>
+            <a href="#about-us">About Us</a>
+            <a href="#contact">Contact</a>
+            <button class="logout">Log Out</button>
+        </nav>
+    </header>
+    <main>
+        <section id="home" class="home-section">
+            <h1>Welcome to RentMyRide</h1>
+            <p>Your one-stop solution for car rentals. Browse through our collection and find your perfect ride.</p>
+        </section>
+        
+        <section id="rent-now" class="car-list">
+            <div class="car-card">
+                <h2>BMW</h2>
+                <h3>BMW m3</h3>
+                <img src="https://o.aolcdn.com/images/dims3/GLOB/legacy_thumbnail/1062x597/format/jpg/quality/100/https://s.aolcdn.com/os/ab/_cms/2021/11/19163652/cobb_TFW-281021-6253.jpg" alt="2022 BMW M3-M4 Competition">
+                <p>Petrol | Automatic | 5 Seats</p>
+                <p>Price: $31,005</p>
+                <button class="book-now" data-car="BMW-m3">Book Now</button>
+            </div>
+            <!-- Additional car cards here -->
+        </section>
+
+        <section id="about-us">
+            <div class="container">
+                <h1>Welcome to RentMyRide</h1>
+                <p>Your trusted partner in car rental services. Established with the mission to provide high-quality, reliable, and affordable car rental solutions, RentMyRide has quickly become a go-to choice for travelers, businesses, and locals alike. Our commitment to excellence, customer satisfaction, and innovation sets us apart in the car rental industry.</p>
+                <h2>Our Mission</h2>
+                <p>At RentMyRide, our mission is simple: to make car rentals as convenient and accessible as possible. We understand that whether you're traveling for business, planning a road trip, or need a vehicle for daily use, having a dependable car rental service is crucial. Our aim is to provide a seamless rental experience from start to finish.</p>
+                <h2>Our Fleet</h2>
+                <p>We offer a diverse fleet of vehicles to meet your unique needs. From compact cars for city drives to spacious SUVs for family trips, and luxury vehicles for special occasions, our selection is designed to accommodate every requirement and preference. Each car in our fleet is regularly maintained and inspected to ensure safety, reliability, and comfort.</p>
+            </div>
+        </section>
+
+        <section id="contact">
+            <div class="container">
+                <h2>Contact Us</h2>
+                <form action="/submit-contact-form" method="post">
+                    <div class="form-group">
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message:</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit">Send Message</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <div id="bookingModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <form id="bookingForm" action="/submit-booking" method="post">
+                <h2>Book Now</h2>
+                <label for="carName">Car:</label>
+                <input type="text" id="carName" name="carName" readonly>
+                <label for="fullName">Full Name:</label>
+                <input type="text" id="fullName" name="fullName" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="pickupDate">Pick-up Date:</label>
+                <input type="date" id="pickupDate" name="pickupDate" required>
+                <label for="returnDate">Return Date:</label>
+                <input type="date" id="returnDate" name="returnDate" required>
+                <label for="location">Pick-up Location:</label>
+                <input type="text" id="location" name="location" required>
+                <button type="submit">Confirm Booking</button>
+            </form>
+        </div>
+    </div>
+    <script src="scripts/scripts.js"></script>
+</body>
+</html>
+
