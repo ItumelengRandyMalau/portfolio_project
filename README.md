@@ -15,7 +15,6 @@ npm install
 
 Start the server:
 npm start
-
 Features
 Customer Login/Register:
 Users can create accounts or log in to access the rental service.
@@ -42,3 +41,9 @@ This project is licensed under the MIT License. See the LICENSE file for details
 
 follow Itumeleng Randy Malau on the socials on the following links:
 https://www.linkedin.com/in/itumeleng-malau?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app
+
+The following link will take you to our live deployed project:http://flam3.tech/flam3_static/
+
+the following link is for the screen shot of our project:
+![projectScreenShot](https://github.com/ItumelengRandyMalau/portfolio_project/assets/133719646/41673d5b-be4d-4f25-9aff-b06f7c066e96)
+
