@@ -1,8 +1,9 @@
 Introduction to
 Rent My Ride, a web application that allows users to rent cars online. It provides a convenient way to browse available cars, calculate rental costs, and make payments securely.
 
-Live Demo: Rent My Ride 
+Live Demo: follow the below link to our Rent My Ride live demo
 
+https://github.com/ItumelengRandyMalau/portfolio_project/assets/133719646/847b6599-0b4d-423d-b313-06d539bb5442
 
 Blog Article: Read about our development journey on our blog.
 
