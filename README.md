@@ -1,8 +1,12 @@
-Introduction
-Rent My Ride is a web application that allows users to rent cars online. It provides a convenient way to browse available cars, calculate rental costs, and make payments securely.
+Introduction to
+Rent My Ride, a web application that allows users to rent cars online. It provides a convenient way to browse available cars, calculate rental costs, and make payments securely.
 
-Live Demo: Car Rental Service
+Live Demo: Rent My Ride 
+
+
 Blog Article: Read about our development journey on our blog.
+
+
 Installation
 Clone this repository.
 Set up your MySQL database. Modify the database settings in config.js.
@@ -35,3 +39,6 @@ We welcome contributions! If you’d like to improve this project, feel free to 
 
 Licensing
 This project is licensed under the MIT License. See the LICENSE file for details.
+
+follow Itumeleng Randy Malau on the socials on the following links:
+https://www.linkedin.com/in/itumeleng-malau?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app
