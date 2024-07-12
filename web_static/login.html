@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login/Signup</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles/login.css') }}">
+    <link rel="stylesheet" href="styles/login.css">
 </head>
 <body>
     <div class="container">
@@ -14,7 +14,7 @@
             <button class="tab-link" onclick="openForm('signup')">Signup</button>
         </div>
         <div id="login" class="form-container active">
-            <form action="{{ url_for('login') }}" method="post">
+            <form action="login.php" method="post">
                 <label for="login-username">Username:</label>
                 <input type="text" id="login-username" name="username" required>
                 <label for="login-password">Password:</label>
@@ -23,7 +23,7 @@
             </form>
         </div>
         <div id="signup" class="form-container">
-            <form action="{{ url_for('signup') }}" method="post">
+            <form action="signup.php" method="post">
                 <label for="signup-username">Username:</label>
                 <input type="text" id="signup-username" name="username" required>
                 <label for="signup-email">Email:</label>
@@ -34,21 +34,7 @@
             </form>
         </div>
     </div>
-    <script>
-        function openForm(formName) {
-            var i, tabcontent, tablinks;
-            tabcontent = document.getElementsByClassName("form-container");
-            for (i = 0; i < tabcontent.length; i++) {
-                tabcontent[i].classList.remove("active");
-            }
-            tablinks = document.getElementsByClassName("tab-link");
-            for (i = 0; i < tablinks.length; i++) {
-                tablinks[i].classList.remove("active");
-            }
-            document.getElementById(formName).classList.add("active");
-            document.querySelector(`[onclick="openForm('${formName}')"]`).classList.add("active");
-        }
-    </script>
+    <script src="scripts/login.js"></script>
 </body>
 </html>
 

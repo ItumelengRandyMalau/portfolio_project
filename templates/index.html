@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rent My Ride</title>
-    <link rel="stylesheet" href="styles/index.css">
+    <title>Car Rent</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='login/styles.css') }}">
 </head>
 <body>
     <header>
@@ -15,7 +15,7 @@
             <a href="#rent-now">Rent Now</a>
             <a href="#about-us">About Us</a>
             <a href="#contact">Contact</a>
-            <button class="logout">Log Out</button>
+            <a href="{{ url_for('logout') }}" class="logout">Log Out</a>
         </nav>
     </header>
     <main>
@@ -27,7 +27,7 @@
         
         <!-- Rent Now Section -->
         <section id="rent-now" class="car-list">
-             <div class="car-card">
+            <div class="car-card">
                 <h2>BMW</h2>
                 <h3>BMW m3</h3>
                 <img src="https://o.aolcdn.com/images/dims3/GLOB/legacy_thumbnail/1062x597/format/jpg/quality/100/https://s.aolcdn.com/os/ab/_cms/2021/11/19163652/cobb_TFW-281021-6253.jpg" alt="2022 BMW M3-M4 Competition">
@@ -68,40 +68,65 @@
                 <button class="book-now" data-car="2018 Mazda CX-9">Book Now</button>
             </div>
             <div class="car-card">
-                <h2>Toyota</h2>
+                <h2>Toyota</h3>
                 <h3>Toyota Etios</h3>
-                <img src="https://3.bp.blogspot.com/-795wHJWNP4E/WqMeBQ-XDcI/AAAAAAAADA8/8o9bku3Upqc2YZigWWQfzZnjvQ_vSCGLQCLcBGAs/s1600/etios-hatch-2019-x-x-plus-xls-platinum-1.jpg" alt="Toyota Etios-2019">
+                <img src="https://3.bp.blogspot.com/-795wHJWNP4E/WqMeBQ-XDcI/AAAAAAAADA8/8o9bku3Upqc2YZigWWQfzZnjvQ_vSCGLQCLcBGAs/s1600/etios-hatch-2019-x-x-plus-xls-platinum-5.jpg" alt="2019 Toyota Etios">
                 <p>Petrol | Manual | 4 Seats</p>
-                <p>Price: $23,435</p>
-                <button class="book-now" data-car="Toyota Etios-2019">Book Now</button>
+                <p>Price: $25,335</p>
+                <button class="book-now" data-car="2019 Toyota Etios">Book Now</button>
             </div>
             <div class="car-card">
-                <h2>Toyota</h2>
-                <h3>Toyota Yaris</h3>
-                <img src="https://www.drivearabia.com/app/uploads/2014/06/2015-Toyota-Yaris-Hatchback.jpg" alt="2015 Toyota Yaris Hatchback">
+                <h2>Hyundai</h2>
+                <h3>Hyundai i20</h3>
+                <img src="https://cdn.motor1.com/images/mgl/q0mPL/s1/2019-hyundai-i20.jpg" alt="2019 Hyundai i20">
                 <p>Petrol | Manual | 4 Seats</p>
                 <p>Price: $23,435</p>
-                <button class="book-now" data-car="Toyota Yaris">Book Now</button>
+                <button class="book-now" data-car="2019 Hyundai i20">Book Now</button>
             </div>
             <div class="car-card">
-                <h2>Renault</h2>
-                <h3>clio gt</h3>
-                <img src="http://1.bp.blogspot.com/-unI__vdNMjY/UTVCImU2ANI/AAAAAAAARlg/g4ONHBa-feg/s1600/2014-Renault-Clio-GT-2[3].jpg" alt="2014, Clio GT">
+                <h2>Volkswagen</h2>
+                <h3>Volkswagen GTI</h3>
+                <img src="https://media.caradvice.com.au/image/private/s--n00-5j_q--/v1576814208/f2bfa2acbb47036d008d13c5b36b8fe3.jpg" alt="2020 Volkswagen GTI">
                 <p>Petrol | Manual | 4 Seats</p>
-                <p>Price: $23,435</p>
-                <button class="book-now" data-car="Clio GT">Book Now</button>
+                <p>Price: $24,435</p>
+                <button class="book-now" data-car="2020 Volkswagen GTI">Book Now</button>
             </div>
         </section>
+    </main>
 
-        <!-- About Us Section -->
+    <!-- Modal -->
+    <div id="bookingModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <form action="{{ url_for('booking') }}" method="POST">
+                <h2>Book Car</h2>
+                <input type="hidden" id="carName" name="carName">
+                <label for="pickupDate">Pick-up Date:</label>
+                <input type="date" id="pickupDate" name="pickupDate" required>
+                <label for="dropoffDate">Drop-off Date:</label>
+                <input type="date" id="dropoffDate" name="dropoffDate" required>
+                <label for="fullName">Full Name:</label>
+                <input type="text" id="fullName" name="fullName" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="phone">Phone:</label>
+                <input type="tel" id="phone" name="phone" required>
+                <button type="submit">Book Now</button>
+            </form>
+        </div>
+    </div>
+    
+    <!-- About Us Section -->
         <section id="about-us">
             <div class="container">
                 <h1>Welcome to RentMyRide</h1>
-                <p>Your trusted partner in car rental services. Established with the mission to provide high-quality, reliable, and affordable car rental solutions, RentMyRide has quickly become a go-to choice for travelers, businesses, and locals alike. Our commitment to excellence, customer satisfaction, and innovation sets us apart in the car rental industry.</p>
-                <h2>Our Mission</h2>
-                <p>At RentMyRide, our mission is simple: to make car rentals as convenient and accessible as possible. We understand that whether you're traveling for business, planning a road trip, or need a vehicle for daily use, having a dependable car rental service is crucial. Our aim is to provide a seamless rental experience from start to finish.</p>
-                <h2>Our Fleet</h2>
-                <p>We offer a diverse fleet of vehicles to meet your unique needs. From compact cars for city drives to spacious SUVs for family trips, and luxury vehicles for special occasions, our selection is designed to accommodate every requirement and preference. Each car in our fleet is regularly maintained and inspected to ensure safety, reliability, and comfort.</p>
+        <p>Your trusted partner in car rental services. Established with the mission to provide high-quality, reliable, and affordable car rental solutions, RentMyRide has quickly become a go-to choice for travelers, businesses, and locals alike. Our commitment to excellence, customer satisfaction, and innovation sets us apart in the car rental industry.</p>
+        
+        <h2>Our Mission</h2>
+        <p>At RentMyRide, our mission is simple: to make car rentals as convenient and accessible as possible. We understand that whether you're traveling for business, planning a road trip, or need a vehicle for daily use, having a dependable car rental service is crucial. Our aim is to provide a seamless rental experience from start to finish.</p>
+        
+        <h2>Our Fleet</h2>
+        <p>We offer a diverse fleet of vehicles to meet your unique needs. From compact cars for city drives to spacious SUVs for family trips, and luxury vehicles for special occasions, our selection is designed to accommodate every requirement and preference. Each car in our fleet is regularly maintained and inspected to ensure safety, reliability, and comfort.</p>
             </div>
         </section>
 
@@ -128,31 +153,7 @@
                 </form>
             </div>
         </section>
-    </main>
 
-    <!-- Booking Modal -->
-    <div id="bookingModal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <form id="bookingForm" action="/submit-booking" method="post">
-                <h2>Book Now</h2>
-                <label for="carName">Car:</label>
-                <input type="text" id="carName" name="carName" readonly>
-                <label for="pickupDate">Pick-up Date:</label>
-                <input type="date" id="pickupDate" name="pickupDate" required>
-                <label for="dropoffDate">Drop-off Date:</label>
-                <input type="date" id="dropoffDate" name="dropoffDate" required>
-                <label for="fullName">Full Name:</label>
-                <input type="text" id="fullName" name="fullName" required>
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-                <label for="phone">Phone:</label>
-                <input type="tel" id="phone" name="phone" required>
-                <button type="submit">Book Now</button>
-            </form>
-        </div>
-    </div>
-
-    <script src="scripts/index.js"></script>
+    <script src="{{ url_for('static', filename='js/index.js') }}"></script>
 </body>
 </html>
